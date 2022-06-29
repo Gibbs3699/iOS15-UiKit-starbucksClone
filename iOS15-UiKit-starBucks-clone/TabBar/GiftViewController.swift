@@ -1,23 +1,22 @@
 //
-//  ViewController.swift
+//  GiftViewController.swift
 //  iOS15-UiKit-starBucks-clone
 //
-//  Created by TheGIZzz on 27/6/2565 BE.
+//  Created by TheGIZzz on 29/6/2565 BE.
 //
 
 import UIKit
 
-class HomeViewController: StarBucksViewController {
+class GiftViewController: StarBucksViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .green
-        title = "Home"
+        title = "Gift"
     }
     
     override func commonInit() {
-        setTabBarImage(imageName: "house.fill", title: "Home")
+        setTabBarImage(imageName: "gift.fill", title: "Gift")
     }
 }
-

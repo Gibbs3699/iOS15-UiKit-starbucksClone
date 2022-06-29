@@ -17,12 +17,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScence.coordinateSpace.bounds)
         window?.windowScene = windowScence
         window?.makeKeyAndVisible()
+        window?.backgroundColor = .systemBackground
         
         let homeVC = HomeViewController()
         let scanVC = ScanViewController()
+        let orderVC = OrderViewController()
+        let giftVC = GiftViewController()
+        let storeVC = StoreViewController()
+        
+        let homeNC = UINavigationController(rootViewController: homeVC)
+        let scanNC = UINavigationController(rootViewController: scanVC)
+        let orderNC = UINavigationController(rootViewController: orderVC)
+        let giftNC = UINavigationController(rootViewController: giftVC)
+        let storeNC = UINavigationController(rootViewController: storeVC)
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [homeVC, scanVC]
+        tabBarController.tabBar.backgroundColor = .systemBackground
+        tabBarController.viewControllers = [homeNC, scanNC, orderNC, giftNC, storeNC]
         
         window?.rootViewController = tabBarController
     }
