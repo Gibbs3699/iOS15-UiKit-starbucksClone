@@ -16,8 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScence = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScence.coordinateSpace.bounds)
         window?.windowScene = windowScence
-        window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
+        
+        let homeVC = HomeViewController()
+        let scanVC = ScanViewController()
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [homeVC, scanVC]
+        
+        window?.rootViewController = tabBarController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

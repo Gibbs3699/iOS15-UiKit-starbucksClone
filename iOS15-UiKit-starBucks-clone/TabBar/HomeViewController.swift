@@ -7,14 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: StarBucksViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         view.backgroundColor = .green
     }
-
-
+    
+    override func commonInit() {
+        setTabBarImage(imageName: "house.fill", title: "Home")
+    }
 }
 
