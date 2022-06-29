@@ -17,6 +17,7 @@
 		DC3EA7D0286CB69E00ACF0EB /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7CF286CB69E00ACF0EB /* OrderViewController.swift */; };
 		DC3EA7D2286CB6AC00ACF0EB /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D1286CB6AC00ACF0EB /* GiftViewController.swift */; };
 		DC3EA7D4286CB6B600ACF0EB /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D3286CB6B600ACF0EB /* StoreViewController.swift */; };
+		DC3EA7D6286CBAAC00ACF0EB /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D5286CBAAC00ACF0EB /* Factories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DC3EA7CF286CB69E00ACF0EB /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		DC3EA7D1286CB6AC00ACF0EB /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		DC3EA7D3286CB6B600ACF0EB /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		DC3EA7D5286CBAAC00ACF0EB /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		DC3EA7C8286A05EF00ACF0EB /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC3EA7D5286CBAAC00ACF0EB /* Factories.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3EA7D6286CBAAC00ACF0EB /* Factories.swift in Sources */,
 				DC3EA7D4286CB6B600ACF0EB /* StoreViewController.swift in Sources */,
 				DC3EA7B9286A05E300ACF0EB /* HomeViewController.swift in Sources */,
 				DC3EA7CA286CB3E900ACF0EB /* StarBucksViewController.swift in Sources */,

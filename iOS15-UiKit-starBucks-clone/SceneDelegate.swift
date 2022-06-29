@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let giftVC = GiftViewController()
         let storeVC = StoreViewController()
         
-        let homeNC = UINavigationController(rootViewController: homeVC)
+        let homeNC = makeNavigationController(rootViewController: homeVC)
         let scanNC = UINavigationController(rootViewController: scanVC)
         let orderNC = UINavigationController(rootViewController: orderVC)
         let giftNC = UINavigationController(rootViewController: giftVC)
@@ -38,6 +38,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = tabBarController
     }
 
+    func makeNavigationController(rootViewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.label,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1).bold()
+        ]
+        
+        navigationController.navigationBar.largeTitleTextAttributes = attrs
+        
+        return navigationController
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
