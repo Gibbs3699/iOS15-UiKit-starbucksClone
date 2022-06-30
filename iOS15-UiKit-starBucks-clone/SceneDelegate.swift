@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let giftVC = GiftViewController()
         let storeVC = StoreViewController()
         
-        let homeNC = makeNavigationController(rootViewController: homeVC)
+        let homeNC = UINavigationController(rootViewController: homeVC)
         let scanNC = UINavigationController(rootViewController: scanVC)
         let orderNC = UINavigationController(rootViewController: orderVC)
         let giftNC = UINavigationController(rootViewController: giftVC)
@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         tabBarController.tabBar.backgroundColor = .systemBackground
-        tabBarController.viewControllers = [homeNC, scanNC, orderNC, giftNC, storeNC]
+        tabBarController.viewControllers = [homeVC, scanNC, orderNC, giftNC, storeNC]
         
         window?.rootViewController = tabBarController
     }

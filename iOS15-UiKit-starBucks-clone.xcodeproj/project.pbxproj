@@ -18,6 +18,7 @@
 		DC3EA7D2286CB6AC00ACF0EB /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D1286CB6AC00ACF0EB /* GiftViewController.swift */; };
 		DC3EA7D4286CB6B600ACF0EB /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D3286CB6B600ACF0EB /* StoreViewController.swift */; };
 		DC3EA7D6286CBAAC00ACF0EB /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D5286CBAAC00ACF0EB /* Factories.swift */; };
+		DC3EA7D9286DB2D800ACF0EB /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D8286DB2D800ACF0EB /* HomeHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DC3EA7D1286CB6AC00ACF0EB /* GiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		DC3EA7D3286CB6B600ACF0EB /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		DC3EA7D5286CBAAC00ACF0EB /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		DC3EA7D8286DB2D800ACF0EB /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		DC3EA7B3286A05E300ACF0EB /* iOS15-UiKit-starBucks-clone */ = {
 			isa = PBXGroup;
 			children = (
+				DC3EA7D7286DB29200ACF0EB /* Home */,
 				DC3EA7C8286A05EF00ACF0EB /* Files */,
 				DC3EA7B4286A05E300ACF0EB /* AppDelegate.swift */,
 				DC3EA7B6286A05E300ACF0EB /* SceneDelegate.swift */,
@@ -89,13 +92,21 @@
 			isa = PBXGroup;
 			children = (
 				DC3EA7C9286CB3E900ACF0EB /* StarBucksViewController.swift */,
-				DC3EA7B8286A05E300ACF0EB /* HomeViewController.swift */,
 				DC3EA7CB286CB4F200ACF0EB /* ScanViewController.swift */,
 				DC3EA7CF286CB69E00ACF0EB /* OrderViewController.swift */,
 				DC3EA7D1286CB6AC00ACF0EB /* GiftViewController.swift */,
 				DC3EA7D3286CB6B600ACF0EB /* StoreViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		DC3EA7D7286DB29200ACF0EB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DC3EA7B8286A05E300ACF0EB /* HomeViewController.swift */,
+				DC3EA7D8286DB2D800ACF0EB /* HomeHeaderView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 				DC3EA7CA286CB3E900ACF0EB /* StarBucksViewController.swift in Sources */,
 				DC3EA7CC286CB4F200ACF0EB /* ScanViewController.swift in Sources */,
 				DC3EA7B5286A05E300ACF0EB /* AppDelegate.swift in Sources */,
+				DC3EA7D9286DB2D800ACF0EB /* HomeHeaderView.swift in Sources */,
 				DC3EA7B7286A05E300ACF0EB /* SceneDelegate.swift in Sources */,
 				DC3EA7D2286CB6AC00ACF0EB /* GiftViewController.swift in Sources */,
 				DC3EA7D0286CB69E00ACF0EB /* OrderViewController.swift in Sources */,
