@@ -11,6 +11,7 @@ class HomeViewController: StarBucksViewController {
 
     let homeHeaderView = HomeHeaderView()
     let tableView = UITableView()
+    var headerViewTopConstrain: NSLayoutConstraint?
     
     let cellId = "cellId"
     let titles = [ "Star balances", "Bonus stars", "Try these", "Welcome back", "Uplifting"
@@ -43,9 +44,10 @@ extension HomeViewController {
     func layout() {
         view.addSubview(homeHeaderView)
         view.addSubview(tableView)
+        headerViewTopConstrain =             homeHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         
         NSLayoutConstraint.activate([
-            homeHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerViewTopConstrain!,
             homeHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             homeHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
@@ -84,4 +86,28 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
+}
+
+// MARK: - ScrollView
+extension HomeViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y
+        
+        let swipingDown = y <= 0
+        let swipingUp = y > 30
+        let labelHeight = homeHeaderView.greeting.frame.height + 16
+        
+        UIView.animate(withDuration: 0.3) {
+            self.homeHeaderView.greeting.alpha = swipingDown ? 1.0 : 0.0
+        }
+        
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [], animations: {
+            
+            self.headerViewTopConstrain?.constant = swipingUp ? -labelHeight : 0
+            self.view.layoutIfNeeded() // call auto layout and relay view
+        })
+    }
+    
+    
 }
