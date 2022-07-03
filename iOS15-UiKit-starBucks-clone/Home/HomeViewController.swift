@@ -10,20 +10,19 @@ import UIKit
 class HomeViewController: StarBucksViewController {
 
     let homeHeaderView = HomeHeaderView()
-    let tableView = UITableView()
+    let scrollView = UIScrollView()
+    let stackView = UIStackView()
+    
     var headerViewTopConstrain: NSLayoutConstraint?
     
     let cellId = "cellId"
-    let titles = [ "Star balances", "Bonus stars", "Try these", "Welcome back", "Uplifting"
-    
-    ]
+    let titles = [ TileView("Star balances"), TileView("Bonus stars"), TileView("Try these"), TileView("Welcome back"), TileView("Uplifting")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
         setTabBarImage(imageName: "house.fill", title: "Home")
-        setupTableView()
-        
+        setupScrollView()
         style()
         layout()
         
@@ -32,18 +31,38 @@ class HomeViewController: StarBucksViewController {
     func setupNavBar() {
         navigationController?.navigationBar.topItem?.title = "Home"
     }
+    
+    
+    func setupScrollView() {
+        scrollView.delegate = self
+    }
 }
 
 extension HomeViewController {
     
     func style() {
         homeHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        homeHeaderView.backgroundColor = .systemPink
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.axis = .vertical
+        stackView.spacing = 8
     }
     
     func layout() {
         view.addSubview(homeHeaderView)
-        view.addSubview(tableView)
+        view.addSubview(scrollView)
+        
+        scrollView.addSubview(stackView)
+
+        for title in titles {
+            addChild(title)
+            stackView.addArrangedSubview(title.view)
+            title.didMove(toParent: self)
+        }
+        
         headerViewTopConstrain =             homeHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         
         NSLayoutConstraint.activate([
@@ -51,45 +70,23 @@ extension HomeViewController {
             homeHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             homeHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            tableView.topAnchor.constraint(equalTo: homeHeaderView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: homeHeaderView.bottomAnchor, constant: 8),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            
         ])
     }
 }
 
-// MARK: - UITableView
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        tableView.tableFooterView = UIView()
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        
-        cell.textLabel?.text = titles[indexPath.row]
-        cell.backgroundColor = .red
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
-    }
-}
-
 // MARK: - ScrollView
-extension HomeViewController {
+extension HomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y
@@ -108,6 +105,4 @@ extension HomeViewController {
             self.view.layoutIfNeeded() // call auto layout and relay view
         })
     }
-    
-    
 }
