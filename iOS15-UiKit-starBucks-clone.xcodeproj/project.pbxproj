@@ -19,7 +19,9 @@
 		DC3EA7D4286CB6B600ACF0EB /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D3286CB6B600ACF0EB /* StoreViewController.swift */; };
 		DC3EA7D6286CBAAC00ACF0EB /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D5286CBAAC00ACF0EB /* Factories.swift */; };
 		DC3EA7D9286DB2D800ACF0EB /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3EA7D8286DB2D800ACF0EB /* HomeHeaderView.swift */; };
-		DCE35C952871BD9700D8D256 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35C942871BD9700D8D256 /* TileView.swift */; };
+		DCE35C952871BD9700D8D256 /* PlaceHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35C942871BD9700D8D256 /* PlaceHolderViewController.swift */; };
+		DCE35C97287349EE00D8D256 /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35C96287349EE00D8D256 /* TileViewController.swift */; };
+		DCE35C9928734A1E00D8D256 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35C9828734A1E00D8D256 /* TileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		DC3EA7D3286CB6B600ACF0EB /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		DC3EA7D5286CBAAC00ACF0EB /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		DC3EA7D8286DB2D800ACF0EB /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
-		DCE35C942871BD9700D8D256 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		DCE35C942871BD9700D8D256 /* PlaceHolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderViewController.swift; sourceTree = "<group>"; };
+		DCE35C96287349EE00D8D256 /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
+		DCE35C9828734A1E00D8D256 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,9 @@
 			children = (
 				DC3EA7B8286A05E300ACF0EB /* HomeViewController.swift */,
 				DC3EA7D8286DB2D800ACF0EB /* HomeHeaderView.swift */,
-				DCE35C942871BD9700D8D256 /* TileView.swift */,
+				DCE35C942871BD9700D8D256 /* PlaceHolderViewController.swift */,
+				DCE35C96287349EE00D8D256 /* TileViewController.swift */,
+				DCE35C9828734A1E00D8D256 /* TileView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -182,14 +188,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE35C952871BD9700D8D256 /* TileView.swift in Sources */,
+				DCE35C952871BD9700D8D256 /* PlaceHolderViewController.swift in Sources */,
 				DC3EA7D6286CBAAC00ACF0EB /* Factories.swift in Sources */,
+				DCE35C9928734A1E00D8D256 /* TileView.swift in Sources */,
 				DC3EA7D4286CB6B600ACF0EB /* StoreViewController.swift in Sources */,
 				DC3EA7B9286A05E300ACF0EB /* HomeViewController.swift in Sources */,
 				DC3EA7CA286CB3E900ACF0EB /* StarBucksViewController.swift in Sources */,
 				DC3EA7CC286CB4F200ACF0EB /* ScanViewController.swift in Sources */,
 				DC3EA7B5286A05E300ACF0EB /* AppDelegate.swift in Sources */,
 				DC3EA7D9286DB2D800ACF0EB /* HomeHeaderView.swift in Sources */,
+				DCE35C97287349EE00D8D256 /* TileViewController.swift in Sources */,
 				DC3EA7B7286A05E300ACF0EB /* SceneDelegate.swift in Sources */,
 				DC3EA7D2286CB6AC00ACF0EB /* GiftViewController.swift in Sources */,
 				DC3EA7D0286CB69E00ACF0EB /* OrderViewController.swift in Sources */,
