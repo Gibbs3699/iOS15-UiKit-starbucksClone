@@ -19,7 +19,7 @@ class HomeViewController: StarBucksViewController {
     let titles = [ TileViewController(title: "StarBucks Coffee 1", subtitle: "We add freshly steamed milk and cinnamon dolce-flavored syrup to our classic espresso, topped with sweetened whipped cream and a cinnamon.", imageName: "communities"),
        TileViewController(title: "StarBucks Coffee 2", subtitle: "We add freshly steamed milk and cinnamon dolce-flavored syrup to our classic espresso, topped with sweetened whipped cream and a cinnamon.", imageName: "news-available"),
        TileViewController(title: "StarBucks Coffee 3", subtitle: "We add freshly steamed milk and cinnamon dolce-flavored syrup to our classic espresso, topped with sweetened whipped cream and a cinnamon.", imageName: "bonus"),
-        PlaceHolderViewController("Star balances"), PlaceHolderViewController("Bonus stars"), PlaceHolderViewController("Try these"), PlaceHolderViewController("Welcome back"), PlaceHolderViewController("Uplifting")]
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,6 @@ extension HomeViewController {
     
     func style() {
         homeHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        homeHeaderView.backgroundColor = .systemPink
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
