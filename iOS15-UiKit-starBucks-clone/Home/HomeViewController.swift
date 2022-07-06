@@ -16,7 +16,8 @@ class HomeViewController: StarBucksViewController {
     var headerViewTopConstrain: NSLayoutConstraint?
     
     let cellId = "cellId"
-    let titles = [ TileViewController(title: "StarBucks Coffee 1", subtitle: "We add freshly steamed milk and cinnamon dolce-flavored syrup to our classic espresso, topped with sweetened whipped cream and a cinnamon.", imageName: "communities"),
+    let titles = [ RewardTileViewController(),
+        TileViewController(title: "StarBucks Coffee 1", subtitle: "We add freshly steamed milk and cinnamon dolce-flavored syrup to our classic espresso, topped with sweetened whipped cream and a cinnamon.", imageName: "communities"),
        TileViewController(title: "StarBucks Coffee 2", subtitle: "We add freshly steamed milk and cinnamon dolce-flavored syrup to our classic espresso, topped with sweetened whipped cream and a cinnamon.", imageName: "news-available"),
        TileViewController(title: "StarBucks Coffee 3", subtitle: "We add freshly steamed milk and cinnamon dolce-flavored syrup to our classic espresso, topped with sweetened whipped cream and a cinnamon.", imageName: "bonus"),
         ]
