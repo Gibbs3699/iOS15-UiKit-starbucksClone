@@ -89,3 +89,20 @@ detail: [Starbuck Clone#4](https://www.youtube.com/watch?v=dwnYXPmSZgw&list=PLEV
 
         return button
     }
+    
+#
+### Custom image
+
+<img width="60" alt="Screen Shot 2565-07-07 at 23 55 32" src="https://user-images.githubusercontent.com/57714919/177828914-691404e0-9153-4684-964a-280cdf5093d1.png">
+
+<img width="689" alt="Screen Shot 2565-07-07 at 23 56 56" src="https://user-images.githubusercontent.com/57714919/177828985-3d9e3937-82f9-456a-ab3b-1edf608daa20.png">
+
+<img width="760" alt="Screen Shot 2565-07-07 at 23 55 11" src="https://user-images.githubusercontent.com/57714919/177828687-55c75e8d-08a0-4306-a7db-bd872b3cff1e.png">
+
+    func makeSymbolImageView(systemName: String, scale: UIImage.SymbolScale = .large) -> UIImageView {
+
+        let configuration = UIImage.SymbolConfiguration(scale: scale)
+        let image = UIImage(systemName: systemName, withConfiguration: configuration)
+
+        return UIImageView(image: image)
+    }
