@@ -23,3 +23,29 @@ detail: [Starbuck Clone#3](https://www.youtube.com/watch?v=xBtQsacfDhQ&list=PLEV
 ![Screen Shot 2565-07-04 at 22 55 38](https://user-images.githubusercontent.com/57714919/177188300-8b6e2a55-0469-43f7-ae8d-e73f6d027ba8.png)
 
 detail: [Starbuck Clone#4](https://www.youtube.com/watch?v=dwnYXPmSZgw&list=PLEVREFF3xBv4fLwWvXZoY8cKC6F5P-rlY&index=5).
+
+#
+### Custom button with image
+![Screen Shot 2565-07-07 at 23 35 09](https://user-images.githubusercontent.com/57714919/177825170-66a85549-1caf-458f-a45b-df14b6516ced.png)
+###
+![Screen Shot 2565-07-07 at 23 33 59](https://user-images.githubusercontent.com/57714919/177824965-1510528e-d4e4-460d-869b-4ae788003c20.png)
+    
+    func makeRewardsOptionButton() {
+        rewardButton.translatesAutoresizingMaskIntoConstraints = false
+        rewardButton.addTarget(self, action: #selector(rewardOptionsTapped), for: .primaryActionTriggered)
+
+        let configuration = UIImage.SymbolConfiguration(scale: .small)
+        let image = UIImage(systemName: "chevron.down", withConfiguration: configuration)
+
+        rewardButton.setImage(image, for: .normal)
+        rewardButton.imageView?.tintColor = .label
+        rewardButton.imageView?.contentMode = .scaleAspectFit
+
+        rewardButton.setTitle("Rewards options", for: .normal)
+        rewardButton.setTitleColor(.label, for: .normal)
+        rewardButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
+
+        rewardButton.semanticContentAttribute = .forceRightToLeft
+        rewardButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 20, bottom: 0, right: 0)
+        rewardButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+    }
