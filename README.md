@@ -89,3 +89,217 @@ detail: [Starbuck Clone#4](https://www.youtube.com/watch?v=dwnYXPmSZgw&list=PLEV
 
         return button
     }
+    
+#
+### Custom image
+
+<img width="60" alt="Screen Shot 2565-07-07 at 23 55 32" src="https://user-images.githubusercontent.com/57714919/177828914-691404e0-9153-4684-964a-280cdf5093d1.png">
+
+<img width="689" alt="Screen Shot 2565-07-07 at 23 56 56" src="https://user-images.githubusercontent.com/57714919/177828985-3d9e3937-82f9-456a-ab3b-1edf608daa20.png">
+
+<img width="760" alt="Screen Shot 2565-07-07 at 23 55 11" src="https://user-images.githubusercontent.com/57714919/177828687-55c75e8d-08a0-4306-a7db-bd872b3cff1e.png">
+
+    func makeSymbolImageView(systemName: String, scale: UIImage.SymbolScale = .large) -> UIImageView {
+
+        let configuration = UIImage.SymbolConfiguration(scale: scale)
+        let image = UIImage(systemName: systemName, withConfiguration: configuration)
+
+        return UIImageView(image: image)
+    }
+    
+#  
+### Core graphics
+### Rectangle with border
+detail: [Starbuck Clone#6](https://www.youtube.com/watch?v=dwnYXPmSZgw&list=PLEVREFF3xBv4fLwWvXZoY8cKC6F5P-rlY&index=5), [Core graphics](https://github.com/jrasmusson/ios-starter-kit/blob/master/basics/CoreGraphics/README.md#rectangle-with-no-border)
+
+![image](https://user-images.githubusercontent.com/57714919/177945265-5f03264b-1144-46d4-9d6e-ba501940179f.png)
+
+    func drawRectangle() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 300, height: 300))
+
+        let img = renderer.image { ctx in
+            let rectangle = CGRect(x: 0, y: 0, width: 300, height: 300)
+
+            ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.green.cgColor)
+            ctx.cgContext.setLineWidth(10)
+
+            ctx.cgContext.addRect(rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+        }
+
+        imageView.image = img
+    }
+
+ ### Rectangle with no border
+ ![image](https://user-images.githubusercontent.com/57714919/177945452-e268c032-15b6-4169-94eb-172ef68c184d.png)
+        
+    func drawRectangle2() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 300, height: 300))
+
+        let img = renderer.image { ctx in
+            ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            ctx.cgContext.fill(CGRect(x: 0, y: 0, width: 300, height: 300))
+        }
+
+        imageView.image = img
+    }
+
+ ### Circle
+ ![image](https://user-images.githubusercontent.com/57714919/177945549-09afc403-7843-4f41-98d2-eae93465e682.png)
+ 
+    func drawCircle() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 300, height: 300))
+
+        let img = renderer.image { ctx in
+            ctx.cgContext.setFillColor(UIColor.red.cgColor)
+            ctx.cgContext.setStrokeColor(UIColor.green.cgColor)
+            ctx.cgContext.setLineWidth(10)
+
+            let rectangle = CGRect(x: 0, y: 0, width: 300, height: 300).inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fillStroke)
+        }
+
+        imageView.image = img
+    }
+    
+    > Note: Circles need to be inset because they draw up to rectangle edge
+    
+### Rotated square  
+![image](https://user-images.githubusercontent.com/57714919/177946444-b863eef9-36b0-42f1-8cae-81faae585590.png)
+
+    func drawRotatedSquare() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 256, height: 256))
+
+        let img = renderer.image { ctx in
+
+            ctx.cgContext.translateBy(x: 128, y: 128)
+            let rotations = 16
+            let amount = Double.pi / Double(rotations)
+
+            // add 16 rotated rectangles
+            for _ in 0 ..< rotations {
+                ctx.cgContext.rotate(by: CGFloat(amount))
+                ctx.cgContext.addRect(CGRect(x: -64, y: -64, width: 128, height: 128))
+            }
+
+            ctx.cgContext.setStrokeColor(UIColor.systemRed.cgColor)
+            ctx.cgContext.strokePath()
+        }
+
+        imageView.image = img
+    }
+
+### Draw lines 
+![image](https://user-images.githubusercontent.com/57714919/177946590-dd8678e3-ffe4-4ee6-9cea-b39e21ba5f95.png)
+
+    func drawLines() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 256, height: 256))
+
+        let img = renderer.image { ctx in
+            ctx.cgContext.translateBy(x: 128, y: 128)
+
+            var first = true
+            var length: CGFloat = 128
+
+            for _ in 0 ..< 128 {
+                ctx.cgContext.rotate(by: .pi / 2)
+                if first {
+                    ctx.cgContext.move(to: CGPoint(x: length, y: 25))
+                    first = false
+                } else {
+                    ctx.cgContext.addLine(to: CGPoint(x: length, y: 25))
+                }
+
+                length *= 0.99
+            }
+
+            ctx.cgContext.setStrokeColor(UIColor.systemRed.cgColor)
+            ctx.cgContext.strokePath()
+        }
+
+        imageView.image = img
+    }
+
+### Gradient on Text
+![image](https://user-images.githubusercontent.com/57714919/177946927-6e5da321-7ae7-49ef-9ff6-d844864dff4f.png)
+
+    import UIKit
+
+    class ViewController: UIViewController {
+
+        let label = GradientLabel()
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            style()
+            layout()
+        }
+
+        func style() {
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.font = UIFont.preferredFont(forTextStyle: .title1).bold()
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+
+            label.text = "A NEW WAY TO WORK HAS ARRIVED"
+
+            label.gradientColors = [UIColor.blue.cgColor, UIColor.red.cgColor]
+        }
+
+        func layout() {
+            view.addSubview(label)
+
+            NSLayoutConstraint.activate([
+                label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                label.widthAnchor.constraint(equalToConstant: 300)
+            ])
+        }
+    }
+
+
+    extension UIFont {
+        func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+            let descriptor = fontDescriptor.withSymbolicTraits(traits)
+            return UIFont(descriptor: descriptor!, size: 0) //size 0 means keep the size as it is
+        }
+        func bold() -> UIFont {
+            return withTraits(traits: .traitBold)
+        }
+    }
+
+    class GradientLabel: UILabel {
+        var gradientColors: [CGColor] = []
+
+        override func drawText(in rect: CGRect) {
+            if let gradientColor = drawGradientColor(in: rect, colors: gradientColors) {
+                self.textColor = gradientColor
+            }
+            super.drawText(in: rect)
+        }
+
+        private func drawGradientColor(in rect: CGRect, colors: [CGColor]) -> UIColor? {
+            let currentContext = UIGraphicsGetCurrentContext()
+            currentContext?.saveGState()
+            defer { currentContext?.restoreGState() }
+
+            let size = rect.size
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+            guard let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                            colors: colors as CFArray,
+                                            locations: nil) else { return nil }
+
+            let context = UIGraphicsGetCurrentContext()
+            context?.drawLinearGradient(gradient,
+                                        start: CGPoint.zero,
+                                        end: CGPoint(x: size.width, y: 0),
+                                        options: [])
+            let gradientImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            guard let image = gradientImage else { return nil }
+            return UIColor(patternImage: image)
+        }
+    }
+
