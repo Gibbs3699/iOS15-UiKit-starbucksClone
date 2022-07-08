@@ -11,7 +11,7 @@ class RewardTileView: UIView {
     
     let balanceView = BalanceView()
     let rewardButton = UIButton()
-    let rewardsGraphView = UIView()
+    let rewardsGraphView = RewardsGraphView()
     let starRewardView = UIView()
     var detailsButton = UIButton()
     
@@ -30,6 +30,13 @@ class RewardTileView: UIView {
         return CGSize(width: 100, height: 300)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        rewardsGraphView.actualFrameWidth = frame.width
+        rewardsGraphView.drawRewardsGraph()
+    }
+    
 }
 
 extension RewardTileView {
@@ -38,7 +45,6 @@ extension RewardTileView {
         balanceView.translatesAutoresizingMaskIntoConstraints = false
         
         rewardsGraphView.translatesAutoresizingMaskIntoConstraints = false
-        rewardsGraphView.backgroundColor = .green
         
         starRewardView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -84,7 +90,7 @@ extension RewardTileView {
             
             rewardsGraphView.topAnchor.constraint(equalToSystemSpacingBelow: balanceView.bottomAnchor, multiplier: 1),
             rewardsGraphView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            rewardsGraphView.widthAnchor.constraint(equalToConstant: 100),
+            rewardsGraphView.widthAnchor.constraint(equalToConstant: frame.width),
             rewardsGraphView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             trailingAnchor.constraint(equalToSystemSpacingAfter: rewardsGraphView.trailingAnchor, multiplier: 2),
             

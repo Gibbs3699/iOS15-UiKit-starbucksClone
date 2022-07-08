@@ -25,6 +25,7 @@
 		DCE35C9D2875A9C200D8D256 /* RewardTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35C9C2875A9C200D8D256 /* RewardTileView.swift */; };
 		DCE35C9F2875A9D700D8D256 /* RewardTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35C9E2875A9D600D8D256 /* RewardTileViewController.swift */; };
 		DCE35CA12875ABF700D8D256 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35CA02875ABF700D8D256 /* BalanceView.swift */; };
+		DCE35CA32878206A00D8D256 /* RewardsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35CA22878206A00D8D256 /* RewardsGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DCE35C9C2875A9C200D8D256 /* RewardTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileView.swift; sourceTree = "<group>"; };
 		DCE35C9E2875A9D600D8D256 /* RewardTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileViewController.swift; sourceTree = "<group>"; };
 		DCE35CA02875ABF700D8D256 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		DCE35CA22878206A00D8D256 /* RewardsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				DCE35C9C2875A9C200D8D256 /* RewardTileView.swift */,
 				DCE35C9E2875A9D600D8D256 /* RewardTileViewController.swift */,
 				DCE35CA02875ABF700D8D256 /* BalanceView.swift */,
+				DCE35CA22878206A00D8D256 /* RewardsGraphView.swift */,
 			);
 			path = Reward;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				DC3EA7D6286CBAAC00ACF0EB /* Factories.swift in Sources */,
 				DCE35C9928734A1E00D8D256 /* TileView.swift in Sources */,
 				DC3EA7D4286CB6B600ACF0EB /* StoreViewController.swift in Sources */,
+				DCE35CA32878206A00D8D256 /* RewardsGraphView.swift in Sources */,
 				DC3EA7B9286A05E300ACF0EB /* HomeViewController.swift in Sources */,
 				DC3EA7CA286CB3E900ACF0EB /* StarBucksViewController.swift in Sources */,
 				DC3EA7CC286CB4F200ACF0EB /* ScanViewController.swift in Sources */,
