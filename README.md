@@ -303,3 +303,15 @@ detail: [Starbuck Clone#6](https://www.youtube.com/watch?v=dwnYXPmSZgw&list=PLEV
         }
     }
 
+#  
+### Set Anchor to trailing
+![Screen Shot 2565-07-09 at 23 05 55](https://user-images.githubusercontent.com/57714919/178113623-06f97394-fb85-4328-9c2c-3dde8a26d971.png)
+
+![Screen Shot 2565-07-09 at 23 06 39](https://user-images.githubusercontent.com/57714919/178113632-8390708a-bd52-4fe7-985e-5a05709803cc.png)
+
+![Screen Shot 2565-07-09 at 23 06 51](https://user-images.githubusercontent.com/57714919/178113640-1acb9f68-23ec-46d1-88d8-be47746e09cc.png)
+
+Set intrinsicContentSize to define frame width.
+
+
+
