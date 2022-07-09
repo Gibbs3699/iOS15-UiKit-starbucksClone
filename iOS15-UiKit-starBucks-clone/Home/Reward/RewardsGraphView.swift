@@ -33,18 +33,20 @@ extension RewardsGraphView {
     func style() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        drawRewardsGraph()
     }
     
     func layout() {
+
+        drawRewardsGraph()
+        
         addSubview(imageView)
         
         NSLayoutConstraint.activate([
-                imageView.topAnchor.constraint(equalTo: topAnchor),
-                imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
     
     func drawRewardsGraph() {

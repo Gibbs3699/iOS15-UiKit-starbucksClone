@@ -26,6 +26,9 @@
 		DCE35C9F2875A9D700D8D256 /* RewardTileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35C9E2875A9D600D8D256 /* RewardTileViewController.swift */; };
 		DCE35CA12875ABF700D8D256 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35CA02875ABF700D8D256 /* BalanceView.swift */; };
 		DCE35CA32878206A00D8D256 /* RewardsGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35CA22878206A00D8D256 /* RewardsGraphView.swift */; };
+		DCE35CA62879DB7C00D8D256 /* StarRewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35CA52879DB7C00D8D256 /* StarRewardView.swift */; };
+		DCE35CA82879DBFD00D8D256 /* StarAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35CA72879DBFD00D8D256 /* StarAndPoints.swift */; };
+		DCE35CAA2879E10500D8D256 /* StarRewardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE35CA92879E10500D8D256 /* StarRewardRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		DCE35C9E2875A9D600D8D256 /* RewardTileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTileViewController.swift; sourceTree = "<group>"; };
 		DCE35CA02875ABF700D8D256 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		DCE35CA22878206A00D8D256 /* RewardsGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsGraphView.swift; sourceTree = "<group>"; };
+		DCE35CA52879DB7C00D8D256 /* StarRewardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardView.swift; sourceTree = "<group>"; };
+		DCE35CA72879DBFD00D8D256 /* StarAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAndPoints.swift; sourceTree = "<group>"; };
+		DCE35CA92879E10500D8D256 /* StarRewardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		DC3EA7D7286DB29200ACF0EB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DCE35CA42879DB6100D8D256 /* StarReward */,
 				DCE35C9A2875A99600D8D256 /* Reward */,
 				DC3EA7B8286A05E300ACF0EB /* HomeViewController.swift */,
 				DC3EA7D8286DB2D800ACF0EB /* HomeHeaderView.swift */,
@@ -136,6 +143,16 @@
 				DCE35CA22878206A00D8D256 /* RewardsGraphView.swift */,
 			);
 			path = Reward;
+			sourceTree = "<group>";
+		};
+		DCE35CA42879DB6100D8D256 /* StarReward */ = {
+			isa = PBXGroup;
+			children = (
+				DCE35CA52879DB7C00D8D256 /* StarRewardView.swift */,
+				DCE35CA72879DBFD00D8D256 /* StarAndPoints.swift */,
+				DCE35CA92879E10500D8D256 /* StarRewardRow.swift */,
+			);
+			path = StarReward;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,12 +226,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE35C952871BD9700D8D256 /* PlaceHolderViewController.swift in Sources */,
+				DCE35CAA2879E10500D8D256 /* StarRewardRow.swift in Sources */,
 				DC3EA7D6286CBAAC00ACF0EB /* Factories.swift in Sources */,
 				DCE35C9928734A1E00D8D256 /* TileView.swift in Sources */,
 				DC3EA7D4286CB6B600ACF0EB /* StoreViewController.swift in Sources */,
 				DCE35CA32878206A00D8D256 /* RewardsGraphView.swift in Sources */,
 				DC3EA7B9286A05E300ACF0EB /* HomeViewController.swift in Sources */,
 				DC3EA7CA286CB3E900ACF0EB /* StarBucksViewController.swift in Sources */,
+				DCE35CA82879DBFD00D8D256 /* StarAndPoints.swift in Sources */,
 				DC3EA7CC286CB4F200ACF0EB /* ScanViewController.swift in Sources */,
 				DC3EA7B5286A05E300ACF0EB /* AppDelegate.swift in Sources */,
 				DC3EA7D9286DB2D800ACF0EB /* HomeHeaderView.swift in Sources */,
@@ -223,6 +242,7 @@
 				DC3EA7B7286A05E300ACF0EB /* SceneDelegate.swift in Sources */,
 				DCE35C9D2875A9C200D8D256 /* RewardTileView.swift in Sources */,
 				DCE35CA12875ABF700D8D256 /* BalanceView.swift in Sources */,
+				DCE35CA62879DB7C00D8D256 /* StarRewardView.swift in Sources */,
 				DC3EA7D2286CB6AC00ACF0EB /* GiftViewController.swift in Sources */,
 				DC3EA7D0286CB69E00ACF0EB /* OrderViewController.swift in Sources */,
 			);
