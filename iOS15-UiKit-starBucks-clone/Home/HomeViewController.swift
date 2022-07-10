@@ -12,8 +12,14 @@ class HomeViewController: StarBucksViewController {
     let homeHeaderView = HomeHeaderView()
     let scrollView = UIScrollView()
     let stackView = UIStackView()
+    let scanButton = UIButton()
     
     var headerViewTopConstrain: NSLayoutConstraint?
+    
+    struct ScanButtonSpacing {
+        static let height: CGFloat = 60
+        static let weight: CGFloat = 170
+    }
     
     let cellId = "cellId"
     let titles = [ RewardTileViewController(),
@@ -52,11 +58,22 @@ extension HomeViewController {
         
         stackView.axis = .vertical
         stackView.spacing = 8
+        
+        scanButton.translatesAutoresizingMaskIntoConstraints = false
+        scanButton.setTitle("Scan in store", for: .normal)
+        scanButton.titleLabel?.minimumScaleFactor = 0.5 //resize text
+        scanButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
+        scanButton.titleLabel?.adjustsFontSizeToFitWidth = true //resize text
+        scanButton.setTitleColor(.white, for: .normal)
+        scanButton.backgroundColor = .lightGreen
+        scanButton.layer.cornerRadius = ScanButtonSpacing.height/2
+
     }
     
     func layout() {
         view.addSubview(homeHeaderView)
         view.addSubview(scrollView)
+        view.addSubview(scanButton)
         
         scrollView.addSubview(stackView)
 
@@ -82,7 +99,12 @@ extension HomeViewController {
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            scanButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            scanButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+            scanButton.widthAnchor.constraint(equalToConstant: ScanButtonSpacing.weight),
+            scanButton.heightAnchor.constraint(equalToConstant: ScanButtonSpacing.height),
             
         ])
     }
